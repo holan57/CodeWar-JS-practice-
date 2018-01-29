@@ -1,0 +1,32 @@
+function findMissingLetter(array)
+{
+
+  var aToz = [];
+  var aTozLower = [];
+  
+  for(var i=65;i<91;i++) {
+  
+   aToz.push(String.fromCharCode(i));
+   
+  }
+  
+  for(var j=97;j<122;j++) {
+  
+     aTozLower.push(String.fromCharCode(j));
+   
+  }
+  
+  var index = 0;
+  
+  if (aToz.indexOf(array[0]) > -1){
+     index = aToz.indexOf(array[0]);
+     checkArray = aToz.slice(index,index+array.length+1);
+  } else {
+     index = aTozLower.indexOf(array[0]);
+     checkArray = aTozLower.slice(index,index+array.length+1);
+  }
+
+  var c = checkArray.filter(function(v){ return array.indexOf(v) == -1 });
+  
+  return c[0];
+}

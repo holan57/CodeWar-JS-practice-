@@ -1,0 +1,18 @@
+function tribonacci(signature,n){
+ var args = Array.from(signature);
+  if ( n == 0 ) {
+    return [];
+  } else if (n == 1) {
+    var re = [];
+    re.push(args[0]);
+    return re;
+  } else if (signature.length <=2) {
+    return args; 
+  } else {
+    for (var x = 2; x < n-1; x++) {
+       var y = args[x-2]+ args[x-1] + args[x];
+       args.push(y);
+    }   
+    return args;
+  }
+}

@@ -1,0 +1,9 @@
+var uniqueInOrder=function(iterable){
+  var y = [];
+  for (var x = 0; x<iterable.length; x++){
+    if (iterable[x] != iterable[x+1]) {
+      y.push(iterable[x]);
+    }
+  }
+  return y;
+}

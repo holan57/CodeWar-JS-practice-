@@ -1,0 +1,14 @@
+function accum(s) {
+  var uccu = Array.from(s); 
+  var ucc = []
+  for (var x=0; x< uccu.length; x++) {
+    var y = uccu[x].toUpperCase();
+     
+    for (var z=0; z < x; z++) {
+     y += uccu[x].toLowerCase();
+    }
+    ucc.push(y);
+  }
+  ucc = ucc.join("-");
+  return ucc;
+}
